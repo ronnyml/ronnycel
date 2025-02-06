@@ -64,6 +64,13 @@ const projects: ProjectCategory[] = [
     {
       "React - Next.js": [
         {
+            title: "React Calendar",
+            description: "React calendar app built with TypeScript that allows users to manage reminders.",
+            image: "react-calendar.png",
+            github: "react-calendar",
+            url: "https://react-calendar-seven-beta.vercel.app"
+        },
+        {
             title: "React Task Board Real-time",
             description: "A real-time collaborative task board application built with React, TypeScript and Socket.io",
             image: "react-task-board.png",
@@ -78,18 +85,18 @@ const projects: ProjectCategory[] = [
           url: ""
         },
         {
-          title: "Next.js Project Manager",
-          description: "Next.js app to manage projects",
-          image: "project-management.png",
-          github: "nextjs-project-manager",
-          url: "https://nextjs-project-manager.vercel.app/"
-        },
-        {
             title: "React Questionarie App",
             description: "App built with React and TypeScript to take customizable questionnaires and collecting responses.",
             image: "react-questionarie.png",
             github: "react-questionarie",
             url: "https://react-questionarie.vercel.app/"
+        },
+        {
+            title: "Next.js Project Manager",
+            description: "Next.js app to manage projects",
+            image: "project-management.png",
+            github: "nextjs-project-manager",
+            url: "https://nextjs-project-manager.vercel.app/"
         }
       ]
     },
