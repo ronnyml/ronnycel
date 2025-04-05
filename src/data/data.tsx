@@ -1,6 +1,6 @@
-import { 
+import {
     faGithub,
-    faLinkedin, 
+    faLinkedin,
     faTwitter,
     faInstagram,
     faMedium
@@ -26,7 +26,7 @@ const navLinks = [
       url: "https://ronnyml.wordpress.com/blog/"
     }
 ]
-  
+
 const socialIcons = [
     {
         title: 'GitHub',
@@ -107,6 +107,13 @@ const projects: ProjectCategory[] = [
             description: "Django app to generate screenshots from a specified URL.",
             image: "python-screenshot-generator.png",
             github: "python-screenshot-generator",
+            url: ""
+        },
+        {
+            title: "PyScanText",
+            description: "Streamlit app that extracts text from images using OCR and detects programming languages.",
+            image: "pyscantext.png",
+            github: "pyscantext",
             url: ""
         },
         {
