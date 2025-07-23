@@ -7,37 +7,37 @@ import { projects } from "@/src/data/data";
 
 const Projects = () => {
   return (
-    <div className="flex justify-center py-6">
-      <div className="w-10/12">
+    <div className="flex justify-center py-8 bg-transparent">
+      <div className="w-full max-w-7xl px-2 md:px-6">
         <section className="flex flex-col">
-          <h1 className="text-3xl text-zinc-950 font-bold text-center mt-4 mb-3">Side Projects</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white text-center mt-4 mb-6 tracking-tight drop-shadow-lg">Side Projects</h1>
             {projects.map((projectGroup, index) => (
               <div key={index}>
                 {Object.entries(projectGroup).map(([category, projectsInCategory]) => (
                   <div key={category}>
-                    <h2 className="text-2xl underline font-bold mt-4 mb-4">{category}</h2>
-                    <div className="mt-1 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white text-center mt-10 mb-6 underline underline-offset-4 decoration-sky-700 drop-shadow">{category}</h2>
+                    <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                       {projectsInCategory.map((project, projectIndex) => (
-                        <div key={projectIndex} className="block rounded-lg bg-white border border-neutral-300 dark:bg-neutral-700">
+                        <div key={projectIndex} className="block rounded-2xl bg-white/90 backdrop-blur-md border border-neutral-200 shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-200">
                           <div
                             className="relative overflow-hidden flex items-center justify-center"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <Image
-                              className="mt-2 rounded-t-lg shadow-xl"
+                              className="mt-2 rounded-t-2xl shadow-xl"
                               src={`/images/projects/${project.image}`}
-                              alt=""
+                              alt={project.title}
                               width={300}
                               height={300} />
                           </div>
-                          <div className="p-2">
-                            <h5 className="mb-2 text-center text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                          <div className="p-4">
+                            <h5 className="mb-2 text-center text-xl font-bold leading-tight text-zinc-900">
                               {project.title}
                             </h5>
-                            <p className="mb-4 text-center text-base text-neutral-600 dark:text-neutral-200">
+                            <p className="mb-4 text-center text-base text-zinc-700">
                               {project.description}
                             </p>
-                            <div className="text-center">
+                            <div className="text-center flex justify-center gap-2">
                             {project.github &&
                               <Link
                                 href={project.github.startsWith('http') ? project.github : `https://github.com/ronnyml/${project.github}`}
@@ -48,7 +48,7 @@ const Projects = () => {
                                 <FontAwesomeIcon
                                   icon={faGithub}
                                   size="2x"
-                                  color="#000" />
+                                  color="#0d1225" />
                               </Link>
                             }
 
@@ -62,7 +62,7 @@ const Projects = () => {
                                 <FontAwesomeIcon
                                   icon={faComputer}
                                   size="2x"
-                                  color="#000" />
+                                  color="#0d1225" />
                               </Link>
                             }
                             </div>

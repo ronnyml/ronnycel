@@ -64,6 +64,13 @@ const projects: ProjectCategory[] = [
     {
       "React - Next.js": [
         {
+            title: "React Academy",
+            description: "E-learning platform built with React and Node.js.",
+            image: "react-academy.png",
+            github: "react-academy",
+            url: ""
+        },
+        {
             title: "React Calendar",
             description: "React calendar app built with TypeScript that allows users to manage reminders.",
             image: "react-calendar.png",
