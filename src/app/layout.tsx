@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${roboto.className} bg-[conic-gradient(at_top_left,_#000000_40%,_#0d1225_80%,_#000100_100%)] min-h-screen`}>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1 flex justify-center items-start px-2 md:px-0 mt-1">
+          <main className="flex-1 px-4 md:px-12">
             {children}
           </main>
           <Footer />

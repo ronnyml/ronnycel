@@ -24,13 +24,13 @@ const Header = () => {
       </div>
 
       {/* Mobile Header */}
-      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[conic-gradient(at_top_left,_#000000_40%,_#0d1225_80%,_#000100_100%)] shadow-lg border-b border-white/10 lg:hidden h-16 flex items-center justify-end transition-all duration-300">
+      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black shadow-lg border-b border-white/10 lg:hidden h-16 flex items-center justify-end transition-all duration-300">
         <button type="button" className="space-y-2 mr-5" onClick={() => setIsNavOpen(prev => !prev)} aria-label="Open navigation menu">
           <div className="bg-white block w-8 h-1 rounded transition-all" />
           <div className="bg-white block w-8 h-1 rounded transition-all" />
           <div className="bg-white block w-8 h-1 rounded transition-all" />
         </button>
-        <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+        <div className={isNavOpen ? "showMenuNav fixed inset-0 z-50 bg-black flex flex-col" : "hideMenuNav"}>
           <div className="absolute top-0 right-0 px-8 py-8" onClick={() => setIsNavOpen(false)}>
             <svg
               className="h-8 w-8 text-white"
@@ -45,14 +45,14 @@ const Header = () => {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </div>
-          <nav className="flex flex-col items-center justify-between min-h-[250px]">
+          <nav className="flex flex-col items-center justify-center min-h-screen bg-black rounded-none shadow-none p-8 w-full">
             {navLinks.map((link) => (
               <Link 
                 key={link.url}
                 href={link.url}
                 onClick={() => setIsNavOpen(false)}
                 target={link.url.startsWith('http') ? "_blank" : ""}
-                className="border-b border-gray-200 my-4 uppercase text-white hover:text-gray-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+                className="border-b border-gray-700 my-4 uppercase text-white hover:text-blue-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 w-full text-center"
               >
                 {link.title}
               </Link>

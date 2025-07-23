@@ -22,6 +22,10 @@ const navLinks = [
       url: "/projects"
     },
     {
+      title: "Services",
+      url: "/services"
+    },
+    {
       title: "Blog",
       url: "https://ronnyml.wordpress.com/blog/"
     }

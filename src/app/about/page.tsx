@@ -13,7 +13,7 @@ const chunkArray = (arr: string[], size: number) => {
 const About = () => {
   const skillRows = chunkArray(skills, 5);
   return (
-    <section className="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white/90 flex flex-col items-center justify-center">
+    <section className="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white flex flex-col items-center justify-center">
       <Image
         src="/images/profile.jpeg"
         alt="Profile photo of Ronny Yabar"

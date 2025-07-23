@@ -6,12 +6,12 @@ import { socialIcons } from "../data/data";
 
 const HomePage = () => {
   return (
-    <section className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white/90">
+    <section className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl px-4 md:px-12 p-6 md:p-12 mb-8 bg-white">
       <div className="header text-white mt-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-900 drop-shadow-lg">Software, Travel & Bike</h1>
+        <h1 className="text-2xl md:text-5xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-900 drop-shadow-lg whitespace-nowrap md:whitespace-normal">Software, Travel & Bike</h1>
         <h2 className="text-xl md:text-2xl text-zinc-700 text-center mb-6 font-medium">Ronny Yabar Aizcorbe</h2>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-8">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8">
         <div className="h-full flex items-center justify-center">
           <Image 
             src="/images/ronny.png" 
@@ -22,9 +22,9 @@ const HomePage = () => {
             height={320}
           />
         </div>
-        <div className="flex flex-col justify-center items-center md:items-start">
+        <div className="flex flex-col justify-center items-center md:items-start md:w-1/2">
           <h1 className="relative text-3xl md:text-4xl font-black text-zinc-800 dark:text-white text-center md:text-left mb-2">Hi, I'm Ronny!</h1>
-          <h2 className="mb-4 text-center md:text-left text-lg md:text-xl text-zinc-700 font-semibold">A <span className="text-sky-700 font-extrabold text-xl md:text-2xl decoration-sky-400">Senior Software Engineer</span> based in Peru,<br />focusing on Full Stack and AI Development.</h2>
+          <h2 className="mb-4 text-center md:text-left text-lg md:text-2xl text-zinc-700 font-semibold">A <span className="text-sky-700 font-extrabold text-xl md:text-2xl decoration-sky-400">Senior Software Engineer</span> based in Peru, focusing on Full Stack development and AI solutions.</h2>
           <div className="mt-4 flex items-center gap-3">
             {socialIcons.map(social => (
               <Link
@@ -44,7 +44,7 @@ const HomePage = () => {
         </div>
       </div>
       {/* Badges Section */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mt-14">
+      <div className="flex flex-nowrap md:flex-wrap justify-center items-center gap-6 mt-14 overflow-x-auto">
         <a href="https://www.credly.com/badges/5a755be2-1573-4a8f-8b79-46bb8cee51f8" target="_blank" rel="noopener noreferrer">
           <Image
             src="/images/certificates/meta-fullstack-developer.png"

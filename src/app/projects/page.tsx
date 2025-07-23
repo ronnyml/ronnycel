@@ -18,7 +18,7 @@ const Projects = () => {
                     <h2 className="text-2xl md:text-3xl font-bold text-white text-center mt-10 mb-6 underline underline-offset-4 decoration-sky-700 drop-shadow">{category}</h2>
                     <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                       {projectsInCategory.map((project, projectIndex) => (
-                        <div key={projectIndex} className="block rounded-2xl bg-white/90 backdrop-blur-md border border-neutral-200 shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-200">
+                        <div key={projectIndex} className="block rounded-2xl bg-white backdrop-blur-md border border-neutral-200 shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-200">
                           <div
                             className="relative overflow-hidden flex items-center justify-center"
                             data-te-ripple-init
