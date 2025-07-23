@@ -6,7 +6,7 @@ import { socialIcons } from "../data/data";
 
 const HomePage = () => {
   return (
-    <section className="py-2">
+    <section className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white/90">
       <div className="header text-white mt-4">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-900 drop-shadow-lg">Software, Travel & Bike</h1>
         <h2 className="text-xl md:text-2xl text-zinc-700 text-center mb-6 font-medium">Ronny Yabar Aizcorbe</h2>
@@ -42,6 +42,36 @@ const HomePage = () => {
             ))}
           </div>
         </div>
+      </div>
+      {/* Badges Section */}
+      <div className="flex flex-wrap justify-center items-center gap-6 mt-14">
+        <a href="https://www.credly.com/badges/5a755be2-1573-4a8f-8b79-46bb8cee51f8" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/images/certificates/meta-fullstack-developer.png"
+            alt="Meta Full Stack Developer Badge"
+            width={100}
+            height={100}
+            className="shadow-md hover:scale-105 transition-transform"
+          />
+        </a>
+        <a href="https://www.credly.com/badges/66ad41d8-ab67-46ae-835d-5bf8b1d8cf1e" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/images/certificates/meta-frontend-developer.png"
+            alt="Meta Frontend Developer Badge"
+            width={100}
+            height={100}
+            className="shadow-md hover:scale-105 transition-transform"
+          />
+        </a>
+        <a href="https://www.credly.com/badges/584f4f76-836f-4ab8-b27b-db658cc1d8a4" target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/images/certificates/meta-backend-developer.png"
+            alt="Meta Backend Developer Badge"
+            width={100}
+            height={100}
+            className="shadow-md hover:scale-105 transition-transform"
+          />
+        </a>
       </div>
     </section>
   )
