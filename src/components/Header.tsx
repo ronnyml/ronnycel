@@ -6,23 +6,26 @@ import { navLinks } from "../data/data";
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-      <>
-      <div className="bg-gray-900 hidden md:block">
-        <nav className="flex justify-center items-center space-x-8 h-14">
+    <>
+      {/* Desktop Header */}
+      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[conic-gradient(at_top_left,_#000000_40%,_#0d1225_80%,_#000100_100%)] shadow-lg border-b border-white/10 hidden md:block transition-all duration-300">
+        <nav className="flex justify-center items-center space-x-8 h-[4rem]">
           {navLinks.map((link) => (
             <Link
               key={link.title}
               href={link.url}
               target={link.url.startsWith('http') ? "_blank" : ""}
-              className="text-white hover:text-cyan-200 px-3 py-2">
+              className="text-white hover:text-gray-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
               {link.title}
             </Link>
           ))}
         </nav>
       </div>
 
-      <div className="bg-gray-900 lg:hidden h-16 flex items-center justify-end">
-        <button type="button" className="space-y-2 mr-5" onClick={() => setIsNavOpen(prev => !prev)}>
+      {/* Mobile Header */}
+      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[conic-gradient(at_top_left,_#000000_40%,_#0d1225_80%,_#000100_100%)] shadow-lg border-b border-white/10 lg:hidden h-16 flex items-center justify-end transition-all duration-300">
+        <button type="button" className="space-y-2 mr-5" onClick={() => setIsNavOpen(prev => !prev)} aria-label="Open navigation menu">
           <div className="bg-white block w-8 h-1 rounded transition-all" />
           <div className="bg-white block w-8 h-1 rounded transition-all" />
           <div className="bg-white block w-8 h-1 rounded transition-all" />
@@ -30,7 +33,7 @@ const Header = () => {
         <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
           <div className="absolute top-0 right-0 px-8 py-8" onClick={() => setIsNavOpen(false)}>
             <svg
-              className="h-8 w-8 text-gray-600"
+              className="h-8 w-8 text-white"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -49,14 +52,17 @@ const Header = () => {
                 href={link.url}
                 onClick={() => setIsNavOpen(false)}
                 target={link.url.startsWith('http') ? "_blank" : ""}
-                className="border-b border-gray-400 my-4 uppercase">
+                className="border-b border-gray-200 my-4 uppercase text-white hover:text-gray-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+              >
                 {link.title}
               </Link>
             ))}
           </nav>
         </div>
       </div>
-      </>
+      {/* Spacer for fixed header */}
+      <div className="h-16 md:h-[4rem]" />
+    </>
   )
 }
 
