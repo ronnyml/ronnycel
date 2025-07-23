@@ -209,4 +209,17 @@ const projects: ProjectCategory[] = [
       }
   ];
 
+export const skills = [
+  "aws.png",
+  "javascript.png",
+  "linux.png",
+  "nextjs.png",
+  "nodejs.png",
+  "postgresql.png",
+  "python.png",
+  "react.png",
+  "tailwind.png",
+  "typescript.png",
+];
+
 export { navLinks, socialIcons, projects };
