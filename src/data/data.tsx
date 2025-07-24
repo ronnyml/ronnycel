@@ -27,7 +27,7 @@ const navLinks = [
     },
     {
       title: "Blog",
-      url: "https://ronnyml.wordpress.com/blog/"
+      url: "/blog"
     }
 ]
 
