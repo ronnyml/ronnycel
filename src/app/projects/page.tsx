@@ -16,19 +16,19 @@ const Projects = () => {
                 {Object.entries(projectGroup).map(([category, projectsInCategory]) => (
                   <div key={category}>
                     <h2 className="text-2xl md:text-3xl font-bold text-white text-center mt-10 mb-6 underline underline-offset-4 decoration-sky-700 drop-shadow">{category}</h2>
-                    <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="mt-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 [&>*:only-child]:md:col-start-2">
                       {projectsInCategory.map((project, projectIndex) => (
                         <div key={projectIndex} className="block rounded-2xl bg-white backdrop-blur-md border border-neutral-200 shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-200">
                           <div
-                            className="relative overflow-hidden flex items-center justify-center"
+                            className="p-3 flex items-center justify-center"
                             data-te-ripple-init
                             data-te-ripple-color="light">
                             <Image
-                              className="mt-2 rounded-t-2xl shadow-xl"
+                              className="rounded-xl shadow-md w-full h-auto"
                               src={`/images/projects/${project.image}`}
                               alt={project.title}
-                              width={300}
-                              height={300} />
+                              width={600}
+                              height={400} />
                           </div>
                           <div className="p-4">
                             <h5 className="mb-2 text-center text-xl font-bold leading-tight text-zinc-900">

@@ -66,6 +66,17 @@ const socialIcons = [
 
 const projects: ProjectCategory[] = [
     {
+      "AI Engineering": [
+        {
+            title: "AI Travel Engine",
+            description: "Full-stack AI travel search engine. Type a destination, get a complete guide in under a minute.",
+            image: "ai-travel-engine.png",
+            github: "ai-travel-engine",
+            url: "https://ai-travel-agent-rouge-sigma.vercel.app/"
+        }
+      ]
+    },
+    {
       "React - Next.js": [
         {
             title: "React Academy",
@@ -75,15 +86,15 @@ const projects: ProjectCategory[] = [
             url: ""
         },
         {
-            title: "React Calendar",
-            description: "React calendar app built with TypeScript that allows users to manage reminders.",
+            title: "React AI Calendar",
+            description: "A React AI Calendar app with reminder management, built with React 19, TypeScript, Vite 8, and the Groq API",
             image: "react-calendar.png",
-            github: "react-calendar",
+            github: "react-ai-calendar",
             url: "https://react-calendar-seven-beta.vercel.app"
         },
         {
             title: "React Task Board Real-time",
-            description: "A real-time collaborative task board application built with React, TypeScript and Socket.io",
+            description: "A real-time collaborative task board application built with React, TypeScript, TailwindCSS and Socket.io",
             image: "react-task-board.png",
             github: "react-task-board",
             url: "https://react-task-board-pied.vercel.app/"
