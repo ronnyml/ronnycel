@@ -79,13 +79,6 @@ const projects: ProjectCategory[] = [
     {
       "React - Next.js": [
         {
-            title: "React Academy",
-            description: "E-learning platform built with React and Node.js.",
-            image: "react-academy.png",
-            github: "react-academy",
-            url: ""
-        },
-        {
             title: "React AI Calendar",
             description: "A React AI Calendar app with reminder management, built with React 19, TypeScript, Vite 8, and the Groq API",
             image: "react-calendar.png",
@@ -93,11 +86,18 @@ const projects: ProjectCategory[] = [
             url: "https://react-calendar-seven-beta.vercel.app"
         },
         {
-            title: "React Task Board Real-time",
+            title: "React Task Board",
             description: "A real-time collaborative task board application built with React, TypeScript, TailwindCSS and Socket.io",
             image: "react-task-board.png",
             github: "react-task-board",
             url: "https://react-task-board-pied.vercel.app/"
+        },
+                {
+            title: "React Academy",
+            description: "E-learning platform built with React and Node.js.",
+            image: "react-academy.png",
+            github: "react-academy",
+            url: ""
         },
         {
           title: "React Chat",
