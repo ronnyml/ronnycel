@@ -25,7 +25,7 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col justify-center items-center md:items-start md:w-1/2 w-full">
           <h1 className="relative text-3xl md:text-4xl font-black text-zinc-800 dark:text-white text-center md:text-left mb-2 break-words">Hi, I'm Ronny!</h1>
-          <h2 className="mb-4 text-center md:text-left text-lg md:text-2xl text-zinc-700 font-semibold break-words">A <span className="text-sky-700 font-extrabold text-xl md:text-2xl decoration-sky-400">Senior Software Engineer</span> based in Peru, focusing on Full Stack development and AI solutions.</h2>
+          <h2 className="mb-4 text-center md:text-left text-lg md:text-2xl text-zinc-700 font-semibold break-words">A <span className="text-sky-700 font-extrabold text-xl md:text-2xl decoration-sky-400">Senior Software Engineer</span> based in Peru, focusing on Full Stack development and AI Engineering.</h2>
           <div className="mt-4 flex items-center gap-3 flex-wrap justify-center md:justify-start w-full">
             {socialIcons.map(social => (
               <Link
