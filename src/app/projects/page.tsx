@@ -20,9 +20,9 @@ const Projects = () => {
                       {projectsInCategory.map((project, projectIndex) => (
                         <div key={projectIndex} className="flex flex-col rounded-2xl bg-white backdrop-blur-md border border-neutral-200 shadow-xl hover:shadow-2xl hover:scale-[1.03] transition-all duration-200">
                           <div className="p-3">
-                            <div className="relative w-full h-48 rounded-xl overflow-hidden bg-gray-50">
+                            <div className="relative w-full h-48 rounded-xl overflow-hidden">
                               <Image
-                                className="object-contain"
+                                className="object-cover object-top"
                                 src={`/images/projects/${project.image}`}
                                 alt={project.title}
                                 fill />

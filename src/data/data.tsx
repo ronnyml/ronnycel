@@ -68,10 +68,10 @@ const projects: ProjectCategory[] = [
     {
       "AI Engineering": [
         {
-            title: "AI Travel Engine",
+            title: "AI Travel Agent",
             description: "Full-stack AI travel search engine. Type a destination, get a complete guide in under a minute.",
-            image: "ai-travel-engine.png",
-            github: "ai-travel-engine",
+            image: "ai-travel-agent.png",
+            github: "ai-travel-agent",
             url: "https://ai-travel-agent-rouge-sigma.vercel.app/"
         }
       ]
