@@ -67,7 +67,7 @@ const Blog = () => {
     if (hasMore) {
       fetchPosts(page);
     }
-  }, [page]);
+  }, [page, hasMore]);
 
   useEffect(() => {
     const handleScroll = () => {
