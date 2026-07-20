@@ -1,4 +1,4 @@
-﻿import sanitizeHtml from "sanitize-html";
+import sanitizeHtml from "sanitize-html";
 
 export interface BlogPostSummary {
   ID: number;
@@ -43,6 +43,13 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   if (!response.ok) return null;
   const data = (await response.json()) as BlogPost;
   return data?.ID ? data : null;
+}
+
+function proxyWordPressImage(value: string) {
+  return value.replace(
+    /https:\/\/ronnyml\.wordpress\.com\/wp-content\/uploads/g,
+    "https://i0.wp.com/ronnyml.wordpress.com/wp-content/uploads",
+  );
 }
 
 export function sanitizePostContent(content: string) {
@@ -91,6 +98,10 @@ export function sanitizePostContent(content: string) {
         tagName: "img",
         attribs: {
           ...attributes,
+          src: attributes.src ? proxyWordPressImage(attributes.src) : "",
+          srcset: attributes.srcset
+            ? proxyWordPressImage(attributes.srcset)
+            : "",
           alt: attributes.alt ?? "",
           loading: "lazy",
           decoding: "async",
