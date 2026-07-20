@@ -5,35 +5,31 @@ const services = [
   {
     icon: faCode,
     title: "Full Stack Development",
-    description: "End-to-end web and mobile application development, from frontend to backend, using modern technologies and best practices."
+    description: "Web and mobile application development from frontend to backend, built with modern technologies and a focus on performance, reliability, and maintainability.",
   },
   {
     icon: faRobot,
-    title: "Artificial Intelligence",
-    description: "Focused on generative AI solutions, including large language models (LLMs), automation, and intelligent systems tailored to your business needs."
+    title: "AI Engineering",
+    description: "Generative AI solutions, including large language models, automation, and intelligent systems tailored to practical business needs.",
   },
   {
     icon: faChalkboardTeacher,
     title: "Technical Consulting",
-    description: "Training, mentoring, and guidance on software development, architecture, and best practices for teams and individuals."
-  }
+    description: "Training, mentoring, and pragmatic guidance on software development, architecture, and engineering practices for teams and individuals.",
+  },
 ];
 
-const ServicesPage = () => {
-  return (
-    <section className="w-full max-w-5xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-700 text-center mb-10 tracking-tight">Services</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-        {services.map((service) => (
-          <div key={service.title} className="flex flex-col items-center bg-white rounded-2xl shadow-xl border-2 border-zinc-200 p-6 h-full min-h-[340px]">
-            <FontAwesomeIcon icon={service.icon} size="3x" className="mb-4 text-sky-700" />
-            <h2 className="text-2xl font-bold text-zinc-900 mb-2 text-center min-h-[56px] flex items-center justify-center">{service.title}</h2>
-            <p className="text-zinc-700 text-justify flex-1 flex items-center justify-center">{service.description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-export default ServicesPage; 
+export default function ServicesPage() {
+  return <section className="page-shell page-section">
+    <h1 className="text-center text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">Services</h1>
+    <div className="mt-12 grid gap-5 lg:grid-cols-3">
+      {services.map((service) => <article key={service.title} className="card card-hover flex min-h-80 flex-col items-center p-7 text-center sm:p-8">
+        <span className="grid h-20 w-20 place-items-center rounded-2xl bg-indigo-50 text-indigo-600">
+          <FontAwesomeIcon icon={service.icon} className="h-9 w-9" />
+        </span>
+        <h2 className="mt-8 text-xl font-semibold tracking-tight text-zinc-950">{service.title}</h2>
+        <p className="mt-4 flex-1 text-justify leading-7 text-zinc-600">{service.description}</p>
+      </article>)}
+    </div>
+  </section>;
+}

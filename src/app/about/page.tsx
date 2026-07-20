@@ -1,56 +1,20 @@
-/* eslint-disable react/no-unescaped-entities */
-import Image from "next/image";
+﻿import Image from "next/image";
 import { skills } from "@/src/data/data";
 
-const chunkArray = (arr: string[], size: number) => {
-  const result = [];
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
-  return result;
-};
-
-const About = () => {
-  const skillRows = chunkArray(skills, 5);
-  return (
-    <section className="w-full max-w-3xl mx-auto rounded-3xl shadow-2xl p-6 md:p-12 mb-8 bg-white flex flex-col items-center justify-center">
-      <Image
-        src="/images/profile.jpeg"
-        alt="Profile photo of Ronny Yabar"
-        width={220}
-        height={220}
-        className="rounded-full shadow-lg border-4 border-white object-cover mb-3"
-        priority
-      />
-      <h1 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-700 text-center mb-2 tracking-tight">About Me</h1>
-      <div className="font-sans text-base md:text-lg text-zinc-800 font-light leading-relaxed text-justify text-center max-w-xl">
-        <p>I'm a <span className="font-bold text-sky-700">Senior Full Stack Software Engineer</span> who worked on diverse projects, large-scale web applications and high-traffic websites</p>
-
-        <p>I have extensive experience working remotely for U.S.-based companies. Throughout my career, I’ve successfully designed and implemented a wide range of software solutions, including backend services, APIs, and both web and mobile applications. My recent work includes projects involving generative AI and large language models (LLMs).</p>
-        <h2 className="text-2xl font-bold text-zinc-800 mt-6 mb-2 text-center">Skills</h2>
-        <div className="flex flex-col gap-4 mb-4 items-center">
-          {skillRows.map((row, idx) => (
-            <div key={idx} className="flex flex-row justify-center gap-4">
-              {row.map((logo: string) => (
-                <div key={logo} className="flex items-center justify-center">
-                  <Image
-                    src={`/images/skills/${logo}`}
-                    alt={logo.replace(/\.(svg|png|jpg|jpeg)$/, "")}
-                    width={300}
-                    height={0}
-                    style={{ height: "auto", width: "300px" }}
-                    className="inline-block drop-shadow-sm"
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-        <p>In the past, I successfully participated twice in the <a href="https://summerofcode.withgoogle.com/about" target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-700 underline hover:text-sky-900">Google Summer of Code</a> and spent several years contributing to <a href="https://www.kde.org/" target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-700 underline hover:text-sky-900">KDE</a>, one of the largest Open Source projects in the world.</p>
-        <p>Outside of work and programming, I enjoy spending quality time with my daughter Celeste, as well as with my family and friends. I’m passionate about <span className="font-semibold text-sky-700">mountain biking, LOVE traveling and reading.</span></p>
+export default function About() {
+  return <section className="page-shell page-section">
+    <div className="mx-auto mb-10 w-full max-w-xs">
+      <div className="card p-3"><Image src="/images/profile.jpeg" alt="Profile photo of Ronny Yabar Aizcorbe" width={560} height={560} priority className="aspect-square w-full rounded-xl object-cover" /></div>
+    </div>
+    <h1 className="mb-10 text-center text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">About Me</h1>
+    <article className="card mx-auto max-w-4xl p-7 sm:p-10">
+      <div className="space-y-5 text-justify text-base leading-8 text-zinc-600 sm:text-lg">
+        <p>I&apos;m a <strong className="font-semibold text-zinc-900">Senior Full Stack Software Engineer</strong> who worked on diverse projects, large-scale web applications and high-traffic websites.</p>
+        <p>I have extensive experience working remotely for U.S.-based companies. Throughout my career, I&apos;ve successfully designed and implemented a wide range of software solutions, including backend services, APIs, and both web and mobile applications. My recent work includes projects involving generative AI and large language models (LLMs).</p>
+        <p>In the past, I successfully participated twice in the <a href="https://summerofcode.withgoogle.com/about" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-600 underline decoration-indigo-200 underline-offset-4 hover:decoration-indigo-600">Google Summer of Code</a> and spent several years contributing to <a href="https://www.kde.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-600 underline decoration-indigo-200 underline-offset-4 hover:decoration-indigo-600">KDE</a>, one of the largest Open Source projects in the world.</p>
+        <p>Outside of work and programming, I enjoy spending quality time with my daughter Celeste, as well as with my family and friends. I&apos;m passionate about <span className="font-medium text-indigo-600">mountain biking, traveling and reading.</span></p>
       </div>
-    </section>
-  )
+      <div className="mt-12 border-t border-zinc-200 pt-10"><h2 className="text-center text-2xl font-semibold tracking-tight text-zinc-950">Skills</h2><div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">{skills.map((logo) => { const name = logo.replace(/\.(png|jpg|jpeg|svg)$/, ""); return <div key={logo} className="flex min-h-28 items-center justify-center rounded-xl border border-zinc-200 bg-white p-5" title={name}><Image src={`/images/skills/${logo}`} alt={`${name} logo`} width={100} height={72} className="h-16 w-full object-contain" /></div> })}</div></div>
+    </article>
+  </section>;
 }
-
-export default About;
