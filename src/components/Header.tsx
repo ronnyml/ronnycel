@@ -1,69 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { navLinks } from "../data/data";
-
 const Header = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  return (
-    <>
-      {/* Desktop Header */}
-      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[conic-gradient(at_top_left,_#000000_40%,_#0d1225_80%,_#000100_100%)] shadow-lg border-b border-white/10 hidden md:block transition-all duration-300">
-        <nav className="flex justify-center items-center space-x-8 h-[4rem]">
-          {navLinks.map((link) => (
-            <Link
-              key={link.title}
-              href={link.url}
-              target={link.url.startsWith('http') ? "_blank" : ""}
-              className="text-white hover:text-gray-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
-            >
-              {link.title}
-            </Link>
-          ))}
-        </nav>
-      </div>
-
-      {/* Mobile Header */}
-      <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black shadow-lg border-b border-white/10 lg:hidden h-16 flex items-center justify-end transition-all duration-300">
-        <button type="button" className="space-y-2 mr-5" onClick={() => setIsNavOpen(prev => !prev)} aria-label="Open navigation menu">
-          <div className="bg-white block w-8 h-1 rounded transition-all" />
-          <div className="bg-white block w-8 h-1 rounded transition-all" />
-          <div className="bg-white block w-8 h-1 rounded transition-all" />
-        </button>
-        <div className={isNavOpen ? "showMenuNav fixed inset-0 z-50 bg-black flex flex-col" : "hideMenuNav"}>
-          <div className="absolute top-0 right-0 px-8 py-8" onClick={() => setIsNavOpen(false)}>
-            <svg
-              className="h-8 w-8 text-white"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </div>
-          <nav className="flex flex-col items-center justify-center min-h-screen bg-black rounded-none shadow-none p-8 w-full">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.url}
-                href={link.url}
-                onClick={() => setIsNavOpen(false)}
-                target={link.url.startsWith('http') ? "_blank" : ""}
-                className="border-b border-gray-700 my-4 uppercase text-white hover:text-blue-200 font-semibold px-4 py-2 rounded transition-colors duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40 w-full text-center"
-              >
-                {link.title}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </div>
-      {/* Spacer for fixed header */}
-      <div className="h-16 md:h-[4rem]" />
-    </>
-  )
-}
-
-export default Header;
+ const [open,setOpen]=useState(false); const pathname=usePathname(); useEffect(()=>setOpen(false),[pathname]);
+ return <header className="sticky top-0 z-50 bg-black backdrop-blur-xl" style={{ backgroundImage: "radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.14), transparent 42%), linear-gradient(90deg, #000000, #09090b 50%, #000000)" }}><div className="page-shell relative flex h-16 items-center justify-end md:justify-center sm:h-[72px]">
+ <span className="absolute left-1/2 max-w-[calc(100%-5.5rem)] -translate-x-1/2 truncate text-center text-sm font-semibold tracking-tight text-white md:hidden">Ronny Yabar Aizcorbe</span>
+ <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">{navLinks.map(link=>{const active=link.url==="/"?pathname==="/":pathname.startsWith(link.url);return <Link key={link.title} href={link.url} aria-current={active?"page":undefined} className={`rounded-lg px-3.5 py-2 text-sm font-medium transition ${active?"bg-white text-zinc-950 shadow-sm":"text-zinc-400 hover:bg-zinc-900 hover:text-white"}`}>{link.title}</Link>})}</nav>
+ <button type="button" onClick={()=>setOpen(!open)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open?"Close navigation menu":"Open navigation menu"} className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-zinc-700 bg-zinc-900 text-white shadow-sm md:hidden"><span className="sr-only">Menu</span><span className="flex w-5 flex-col gap-1.5"><span className={`h-0.5 w-5 bg-current transition ${open?"translate-y-2 rotate-45":""}`}/><span className={`h-0.5 w-5 bg-current transition ${open?"opacity-0":""}`}/><span className={`h-0.5 w-5 bg-current transition ${open?"-translate-y-2 -rotate-45":""}`}/></span></button></div>
+ {open&&<nav id="mobile-navigation" aria-label="Mobile navigation" className="page-shell border-t border-zinc-800 py-3 md:hidden">{navLinks.map(link=><Link key={link.title} href={link.url} className="block rounded-xl px-4 py-3 text-base font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white">{link.title}</Link>)}</nav>}</header>
+}; export default Header;

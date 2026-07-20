@@ -1,13 +1,2 @@
-const Footer = () => {
-    return (
-        <footer className="text-center bg-white shadow">
-            <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-                <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                    Built with Next.js, React and Tailwind CSS.
-                </span>
-            </div>
-        </footer>
-    )
-}
-
-export default Footer;
+﻿import Link from "next/link";
+const Footer=()=> <footer className="border-t border-zinc-800 bg-zinc-950"><div className="page-shell flex flex-col items-center justify-center gap-4 py-8 text-center text-sm text-zinc-500"><p>&copy; {new Date().getFullYear()} Ronny Yabar Aizcorbe.</p><div className="flex justify-center gap-5"><Link href="mailto:ronnycontacto@gmail.com" className="font-medium text-zinc-300 hover:text-indigo-300">Email</Link><Link href="https://github.com/ronnyml" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-300 hover:text-indigo-300">GitHub</Link><Link href="https://www.linkedin.com/in/ronnyml" target="_blank" rel="noopener noreferrer" className="font-medium text-zinc-300 hover:text-indigo-300">LinkedIn</Link></div></div></footer>; export default Footer;
