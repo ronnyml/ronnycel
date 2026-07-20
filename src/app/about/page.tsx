@@ -4,7 +4,7 @@ import { skills } from "@/src/data/data";
 export default function About() {
   return <section className="page-shell page-section">
     <div className="mx-auto mb-10 w-full max-w-xs">
-      <div className="card p-3"><Image src="/images/profile.jpeg" alt="Profile photo of Ronny Yabar Aizcorbe" width={560} height={560} priority className="aspect-square w-full rounded-xl object-cover" /></div>
+      <div className="card p-3"><Image src="/images/profile.png" alt="Profile photo of Ronny Yabar Aizcorbe" width={560} height={560} priority className="aspect-square w-full rounded-xl object-cover" /></div>
     </div>
     <h1 className="mb-10 text-center text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">About Me</h1>
     <article className="card mx-auto max-w-4xl p-7 sm:p-10">
