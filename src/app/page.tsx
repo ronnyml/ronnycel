@@ -24,8 +24,8 @@ export default function HomePage() {
           <div>
             <h1 className="mt-7 text-4xl font-semibold tracking-[-0.04em] text-zinc-950 sm:text-5xl">Hi, I&apos;m Ronny!</h1>
             <p className="mt-5 text-justify text-xl leading-8 text-zinc-600">A <strong className="font-semibold text-indigo-600">Senior Software Engineer</strong> based in Peru, focusing on Full Stack development and AI Engineering.</p>
-            <div className="mt-8 flex flex-wrap justify-center gap-2" aria-label="Social links">
-              {socialIcons.map((social) => <Link key={social.title} href={social.url} title={social.title} aria-label={social.title} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-600"><FontAwesomeIcon icon={social.icon} /></Link>)}
+            <div className="mt-8 flex flex-nowrap justify-center gap-0.5 sm:gap-2" aria-label="Social links">
+              {socialIcons.map((social) => <Link key={social.title} href={social.url} title={social.title} aria-label={social.title} target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-xl border border-zinc-200 bg-zinc-50 text-zinc-600 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:text-indigo-600"><FontAwesomeIcon icon={social.icon} style={{ width: "2rem", height: "2rem" }} /></Link>)}
             </div>
           </div>
         </div>
