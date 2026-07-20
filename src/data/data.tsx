@@ -2,8 +2,7 @@ import {
     faGithub,
     faLinkedin,
     faTwitter,
-    faInstagram,
-    faMedium
+    faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { ProjectCategory } from "@/src/interfaces/project.interface";
@@ -51,11 +50,6 @@ const socialIcons = [
         title: 'Instagram',
         url: 'https://instagram.com/ronny_ml',
         icon: faInstagram
-    },
-    {
-        title: 'Medium',
-        url: 'https://medium.com/@ronnyml',
-        icon: faMedium
     },
     {
         title: 'Email',
