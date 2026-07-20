@@ -58,7 +58,7 @@ const socialIcons = [
         icon: faMedium
     },
     {
-        title: 'Envelope',
+        title: 'Email',
         url: 'mailto:ronnycontacto@gmail.com',
         icon: faEnvelope
     }
@@ -196,8 +196,8 @@ const projects: ProjectCategory[] = [
                 url: "https://docs.snowplow.io/docs/sources/trackers/snowplow-tracking-cli/"
             },
             {
-                title: "Programación en C++",
-                description: "C++ Tutorial Series (Spanish): Punteros, matrices, listas, recursividad, búsquedas y ordenamiento.",
+                title: "Programaci\u00f3n en C++",
+                description: "C++ Tutorial Series (Spanish): Punteros, matrices, listas, recursividad, b\u00fasquedas y ordenamiento.",
                 image: "cplusplus.png",
                 github: "C---Tutorial",
                 url: "https://ronnyml.wordpress.com/category/c/"
@@ -233,6 +233,8 @@ const projects: ProjectCategory[] = [
 
 export const skills = [
   "aws.png",
+  "claude.png",
+  "fastapi.png",
   "javascript.png",
   "linux.png",
   "nextjs.png",
