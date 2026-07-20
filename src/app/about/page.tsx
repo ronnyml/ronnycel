@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { skills } from "@/src/data/data";
 
 export default function About() {

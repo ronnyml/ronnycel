@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -57,7 +57,7 @@ export default function BlogList({
           >
             <time
               dateTime={post.date}
-              className="text-sm tabular-nums text-zinc-400"
+              className="text-sm text-zinc-400 tabular-nums"
             >
               {formatPostDate(post.date)}
             </time>

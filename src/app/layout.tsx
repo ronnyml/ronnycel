@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { display, inter } from "../styles/fonts";
 import "../styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";

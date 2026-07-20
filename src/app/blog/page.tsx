@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import BlogList from "@/src/components/BlogList";
 import { getPosts, type BlogPostSummary } from "@/src/lib/wordpress";
 

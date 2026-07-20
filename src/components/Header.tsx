@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,7 +36,7 @@ const Header = () => {
           "radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.14), transparent 42%), linear-gradient(90deg, #000000, #09090b 50%, #000000)",
       }}
     >
-      <div className="page-shell relative flex h-16 items-center justify-end md:justify-center sm:h-[72px]">
+      <div className="page-shell relative flex h-16 items-center justify-end sm:h-[72px] md:justify-center">
         <span className="absolute left-1/2 max-w-[calc(100%-5.5rem)] -translate-x-1/2 truncate text-center text-sm font-semibold tracking-tight text-white md:hidden">
           Ronny Yabar Aizcorbe
         </span>
