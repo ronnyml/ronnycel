@@ -1,4 +1,4 @@
-﻿import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 
 interface PostDetail {
@@ -27,8 +27,9 @@ async function getPostBySlug(slug: string): Promise<PostDetail | null> {
   return { ID: data.ID, title: data.title, date: data.date, content: data.content, slug: data.slug };
 }
 
-export default async function BlogPostDetail({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return notFound();
 
   return <article className="page-shell page-section">
