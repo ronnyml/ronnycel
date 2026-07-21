@@ -73,6 +73,25 @@ button {
 .page-section {
   padding-block: 4rem;
 }
+.card {
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+.card-hover {
+  transition:
+    transform 300ms ease-out,
+    border-color 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+.card-hover:hover {
+  transform: translateY(-0.25rem);
+  border-color: #d4d4d8;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
 
 .article-content p {
   margin: 1.25rem 0;

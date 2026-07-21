@@ -71,3 +71,16 @@ test("blog renders server-loaded posts and opens an article", async ({
     )
     .toBe(0);
 });
+test("shared cards retain their readable white surface", async ({ page }) => {
+  for (const route of ["/", "/about", "/projects", "/services"]) {
+    await page.goto(route);
+    const cards = page.locator(".card");
+    expect(await cards.count()).toBeGreaterThan(0);
+    const backgrounds = await cards.evaluateAll((elements) =>
+      elements.map((element) => getComputedStyle(element).backgroundColor),
+    );
+    expect(
+      backgrounds.every((background) => background === "rgb(255, 255, 255)"),
+    ).toBeTruthy();
+  }
+});
